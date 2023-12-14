@@ -1,0 +1,10 @@
+// tsconfig.prod.json
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      // Add or modify compiler options specific to production if needed
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
+  }
+  
