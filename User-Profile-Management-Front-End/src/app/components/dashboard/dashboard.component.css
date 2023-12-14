@@ -1,0 +1,113 @@
+/* dashboard.component.css */
+
+.dashboard-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.left-section {
+  width: 20%;
+}
+
+.right-section {
+  width: 70%;
+  height: auto;
+}
+
+.mat-card {
+  margin-bottom: 20px;
+}
+
+.create-user-card,
+.update-user-card {
+  height: 200px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 0px grey;
+  -webkit-transition: box-shadow 0.6s ease-out;
+  box-shadow: 0.8px 0.9px 3px grey;
+}
+
+.create-user-card:hover,
+.update-user-card:hover {
+  border: 2px solid blueviolet;
+  box-shadow: 1px 8px 20px grey;
+  -webkit-transition: box-shadow 0.6s ease-in;
+}
+
+.user-list-card {
+  height: 600px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 0px 0px grey;
+  -webkit-transition: box-shadow 0.6s ease-out;
+  box-shadow: 0.8px 0.9px 3px grey;
+}
+
+.user-list-card:hover {
+  border: 2px solid blueviolet;
+  box-shadow: 1px 8px 20px grey;
+  -webkit-transition: box-shadow 0.6s ease-in;
+}
+
+.user-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-card button {
+  margin-left: 10px;
+}
+
+.example-container {
+  position: relative;
+}
+
+.example-table-container {
+  position: relative;
+  min-height: 200px;
+  max-height: 400px;
+  overflow: auto;
+}
+
+.example-loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 56px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-rate-limit-reached {
+  max-width: 360px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: auto;
+}
+
+a{
+  color: #ff4081;
+}

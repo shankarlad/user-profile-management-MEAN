@@ -1,0 +1,88 @@
+<div class="dashboard-container">
+  <div class="left-section">
+    <a routerLink="/userform">
+      <mat-card class="create-user-card">
+        <mat-card-title> Create User </mat-card-title>
+      </mat-card>
+    </a>
+
+  </div>
+
+  <div class="right-section">
+    <div class="mat-elevation-z8">
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input
+          matInput
+          (keyup)="applyFilter($event)"
+          placeholder="Ex. shankar"
+          #input
+        />
+      </mat-form-field>
+
+      <table mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+          <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+          <td mat-cell *matCellDef="let row">{{ row.email }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="gender">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Gender</th>
+          <td mat-cell *matCellDef="let row">{{ row.gender }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="strengths">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Strengths</th>
+          <td mat-cell *matCellDef="let row">{{ row.strengths }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="about">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>About</th>
+          <td mat-cell *matCellDef="let row">{{ row.about }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button color="primary" (click)="onViewClick(row)">
+              <mat-icon>visibility</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              color="accent"
+              (click)="onUpdateClick(row._id)"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              color="warn"
+              (click)="onDeleteClick(row._id)"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">
+            No data matching the filter "{{ input.value }}"
+          </td>
+        </tr>
+      </table>
+      <mat-paginator
+        [length]="data.length"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 50]"
+        aria-label="Select page of data"
+      ></mat-paginator>
+    </div>
+  </div>
+</div>
